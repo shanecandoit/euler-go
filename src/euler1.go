@@ -7,7 +7,7 @@ func Euler1_Mult3or5(top int) int {
 	// we get 3, 5, 6 and 9.
 	// The sum of these multiples is 23.
 	// Find the sum of all the multiples of 3 or 5 below 1000.
-	println("Euler1")
+	// println("Euler1")
 
 	var sum = 0
 	var i = 1
@@ -18,6 +18,6 @@ func Euler1_Mult3or5(top int) int {
 			// println("sum up to", i, "=", sum)
 		}
 	}
-	println("Euler1_Mult3or5", top, "=", sum)
+	// println("Euler1_Mult3or5", top, "=", sum)
 	return sum
 }
