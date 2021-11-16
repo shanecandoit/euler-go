@@ -21,3 +21,19 @@ func TestEuler2(t *testing.T) {
 		t.Fatalf("got %v wanted %v ", got, want)
 	}
 }
+
+func TestEuler3Known(t *testing.T) {
+	want := int64(29)
+	got := src.Euler3(13195)
+	if got != want {
+		t.Fatalf("got %v wanted %v ", got, want)
+	}
+}
+
+func TestEuler3Unknown(t *testing.T) {
+	want := int64(6857)
+	got := src.Euler3(600851475143)
+	if got != want {
+		t.Fatalf("got %v wanted %v ", got, want)
+	}
+}
