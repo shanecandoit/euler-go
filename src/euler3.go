@@ -16,25 +16,33 @@ func Euler3(num int64) int64 {
 		}
 	}
 
-	println("Euler3", num, "=", largestPrimeFactor)
+	// println("Euler3", num, "=", largestPrimeFactor)
 	return int64(largestPrimeFactor)
 }
 
 // IsPrime a number is prime is it has no factors
 func IsPrime(num int64) bool {
-	facs := Factors(num)
-	if len(facs) > 0 {
+	if num == 1 {
 		return true
 	}
+	facs := Factors(num)
+	if len(facs) > 0 {
+		return false
+	}
 
-	return false
+	return true
 }
 
 // Factors the factors of num
 func Factors(num int64) map[int64]int64 {
+	original := num
 	// dont add 1
 	factors := map[int64]int64{}
-	if num%2 == 0 {
+	// fail early for 0 and smaller
+	if num < 2 {
+		return factors
+	}
+	if num%2 == 0 && num != 2 {
 		//factors = append(factors, 2)
 		factors[2] = 1
 		num = num / 2
@@ -57,7 +65,7 @@ func Factors(num int64) map[int64]int64 {
 		}
 	}
 	// rem
-	if num > 1 {
+	if original != num && num > 1 {
 		c, ok := factors[num]
 		if ok {
 			factors[num] = int64(c + 1)

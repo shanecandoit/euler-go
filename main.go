@@ -21,4 +21,7 @@ func main() {
 	// Euler3 13195 = 29
 	println(3, src.Euler3(600_851_475_143))
 	// Euler3 600851475143 = 6857
+
+	fmt.Printf("%d %v\n", 4, src.Euler4(2))
+	// 4 [91 99 9009]
 }
